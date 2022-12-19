@@ -19,7 +19,7 @@ pipeline {
                   [
                     artifactId: 'DevOpsDemo', 
                     classifier: '', 
-                    file: 'target/*.war', 
+                    file: 'target/DevOpsDemo.war', 
                     type: 'war'
                   ]
                 ], 
