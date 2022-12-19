@@ -25,7 +25,7 @@ pipeline {
                 ], 
                   credentialsId: 'nexus', 
                   groupId: 'com.blazeclan', 
-                  nexusUrl: 'ec2-43-204-97-142.ap-south-1.compute.amazonaws.com:8081', 
+                  nexusUrl: '43.204.97.142:8081', 
                   nexusVersion: 'nexus2', 
                   protocol: 'http', 
                   repository: 'http://ec2-43-204-97-142.ap-south-1.compute.amazonaws.com:8081/repository/maven-central-repo/', 
