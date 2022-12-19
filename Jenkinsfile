@@ -26,9 +26,9 @@ pipeline {
                   credentialsId: 'jenkins', 
                   groupId: 'com.blazeclan', 
                   nexusUrl: '43.204.97.142:8081', 
-                  nexusVersion: 'nexus2', 
+                  nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'http://43.204.97.142:8081/repository/maven-central-repo/', 
+                  repository: 'maven-central-repo', 
                   version: '0.0.1'
             }
         }
