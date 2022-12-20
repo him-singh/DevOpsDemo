@@ -21,7 +21,7 @@ pipeline {
         
         stage('SonarQube Analytics') {
             steps {
-                withSonarQubeEnv(credentialsId: 'a04ed73ad0bcf25bfea53232be36f86de8ffc9b6', installationName: 'sonar') {
+                withSonarQubeEnv('sonar') {
                     sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
                 }
             }
