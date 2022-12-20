@@ -5,17 +5,7 @@
 	<artifactId>DevOpsDemo</artifactId>
 	<version>0.0.1</version>
 	<packaging>war</packaging>
-	<build>
-	  <pluginManagement>
-	    <plugins>
-	      <plugin>
-		<groupId>org.sonarsource.scanner.maven</groupId>
-		<artifactId>sonar-maven-plugin</artifactId>
-		<version>3.7.0.1746</version>
-	      </plugin>
-	    </plugins>
-	  </pluginManagement>
-	</build>
+	
 	<build>
 		<finalName>DevOpsDemo</finalName>
 		<sourceDirectory>src</sourceDirectory>
@@ -28,7 +18,15 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			
+			<pluginManagement>
+				 <plugins>
+				      <plugin>
+						<groupId>org.sonarsource.scanner.maven</groupId>
+						<artifactId>sonar-maven-plugin</artifactId>
+						<version>3.7.0.1746</version>
+				      </plugin>
+				 </plugins>
+			 </pluginManagement>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
