@@ -27,7 +27,7 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
