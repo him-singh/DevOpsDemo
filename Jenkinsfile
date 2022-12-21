@@ -46,7 +46,7 @@ pipeline {
                   version: '0.0.1'
             }
         }
-        stage('Deploy') {
+        stage('Deploy on Tomcat9') {
             steps {
                 deploy adapters: 
                     [
@@ -58,7 +58,6 @@ pipeline {
                         )
                     ], 
                     contextPath: 'DevOpsDemo', 
-                    onFailure: false, 
                     war: '**/*.war'
             }
             
