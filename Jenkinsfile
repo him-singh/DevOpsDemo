@@ -46,7 +46,7 @@ pipeline {
                   version: '0.0.1'
             }
         }
-        stage('Test') {
+        stage('Deploy') {
             steps {
                 deploy adapters: 
                     [
