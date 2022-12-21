@@ -4,6 +4,7 @@ To run Dockerfile
 
 sudo docker build .
 
+sudo docker image ls
 
 sudo docker run -p 8080:8080 -d image-id
 
