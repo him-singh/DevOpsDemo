@@ -20,20 +20,7 @@ pipeline {
                 }
             }
         }
-        stage("Quality Gate") {
-            steps {
-                timeout(time: 1, unit: 'HOURS') {
-                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                    // true = set pipeline to UNSTABLE, false = don't
-                    script{
-                        def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-                        if (qg.status != 'OK') {
-                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                        }
-                   }
-                }
-            }
-        }
+        
         stage('Test') {
             steps {
                 sh 'mvn test'
@@ -59,6 +46,22 @@ pipeline {
                   version: '0.0.1'
             }
         }
-     
+        stage('Test') {
+            steps {
+                deploy adapters: 
+                    [
+                        tomcat9
+                        (
+                            credentialsId: '079dcf3c-3b29-42ec-beba-cee2da6ac99d', 
+                            path: '', 
+                            url: 'http://43.204.97.142:8080/'
+                        )
+                    ], 
+                    contextPath: 'DevOpsDemo', 
+                    onFailure: false, 
+                    war: '**/*.war'
+            }
+            
+        }
     }
 }
