@@ -27,22 +27,7 @@ pipeline {
             }
             
         }
-        stage('Deploy on Tomcat9') {
-            steps {
-                deploy adapters: 
-                    [
-                        tomcat9
-                        (
-                            credentialsId: '079dcf3c-3b29-42ec-beba-cee2da6ac99d', 
-                            path: '', 
-                            url: 'http://13.235.83.69:8080/'
-                        )
-                    ], 
-                    contextPath: 'DevOpsDemo', 
-                    war: '**/*.war'
-            }
-            
-        }
+        
         stage('Upload to Nexus') {
             steps {
                 nexusArtifactUploader artifacts: [
@@ -62,6 +47,21 @@ pipeline {
                   version: '0.0.1'
             }
         }
-        
+        stage('Deploy on Tomcat9') {
+            steps {
+                deploy adapters: 
+                    [
+                        tomcat9
+                        (
+                            credentialsId: '079dcf3c-3b29-42ec-beba-cee2da6ac99d', 
+                            path: '', 
+                            url: 'http://13.235.83.69:8080/'
+                        )
+                    ], 
+                    contextPath: 'DevOpsDemo', 
+                    war: '**/*.war'
+            }
+            
+        }
     }
 }
