@@ -35,7 +35,7 @@ pipeline {
                         (
                             credentialsId: '079dcf3c-3b29-42ec-beba-cee2da6ac99d', 
                             path: '', 
-                            url: 'http://43.204.97.142:8080/'
+                            url: 'http://13.235.83.69:8080/'
                         )
                     ], 
                     contextPath: 'DevOpsDemo', 
