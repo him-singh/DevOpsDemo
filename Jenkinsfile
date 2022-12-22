@@ -55,10 +55,10 @@ pipeline {
                 ], 
                   credentialsId: 'jenkins', 
                   groupId: 'com.blazeclan', 
-                  nexusUrl: '43.204.97.142:8081', 
+                  nexusUrl: '43.205.113.14:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'maven-central-repo', 
+                  repository: 'jenkins-maven', 
                   version: '0.0.1'
             }
         }
