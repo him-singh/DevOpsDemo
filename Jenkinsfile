@@ -93,12 +93,12 @@ pipeline {
 def sendSlackNotifcation() 
 { 
 	if ( currentBuild.currentResult == "SUCCESS" ) {
-		buildSummary = "Job:  ${env.JOB_NAME}\n Status: *SUCCESS*\n Build Report: ${env.BUILD_URL}CI-Build-HTML-Report"
+		buildSummary = "Job:  ${env.JOB_NAME}\n Status: *SUCCESS*\n Build Report: ${env.BUILD_URL}"
 
 		slackSend color : "good", message: "${buildSummary}", channel: 'jenkins'
 		}
 	else {
-		buildSummary = "Job:  ${env.JOB_NAME}\n Status: *FAILURE*\n Error description: *${CI_ERROR}* \nBuild Report :${env.BUILD_URL}CI-Build-HTML-Report"
+		buildSummary = "Job:  ${env.JOB_NAME}\n Status: *FAILURE*\n Error description: *${CI_ERROR}* \nBuild Report :${env.BUILD_URL}"
 		slackSend color : "danger", message: "${buildSummary}", channel: 'jenkins'
 		}
 }
