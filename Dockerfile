@@ -19,9 +19,9 @@ RUN rm -rf /tmp/apache-tomcat-${TOMCAT_VERSION}
 RUN rm -rf /tmp/tomcat.tar.gz
 # Add admin/admin user
 ADD tomcat-users.xml /usr/local/tomcat/conf/
+ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/
 
-
-EXPOSE 8080:8080
+EXPOSE 8080
 
 # Start Tomcat
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
