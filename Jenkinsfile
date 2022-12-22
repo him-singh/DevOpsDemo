@@ -53,7 +53,7 @@ pipeline {
                     [
                         tomcat9
                         (
-                            credentialsId: 'c7ea887d-fa1c-4a22-823b-6f420b83c3e6', 
+                            credentialsId: 'tomcat-new1', 
                             path: '', 
                             url: 'http://13.126.227.54:8080/'
                         )
