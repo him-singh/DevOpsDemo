@@ -53,9 +53,9 @@ pipeline {
                     [
                         tomcat9
                         (
-                            credentialsId: '079dcf3c-3b29-42ec-beba-cee2da6ac99d', 
+                            credentialsId: 'c7ea887d-fa1c-4a22-823b-6f420b83c3e6', 
                             path: '', 
-                            url: 'http://13.235.83.69:8080/'
+                            url: 'http://13.126.227.54:8080/'
                         )
                     ], 
                     contextPath: 'DevOpsDemo', 
